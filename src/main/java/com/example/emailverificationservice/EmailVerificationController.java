@@ -28,6 +28,16 @@ public class EmailVerificationController {
     }
 
 
+    @GetMapping("/verificationCodeSent")
+    public String verificationCodeSentPage(@ModelAttribute("verificationCodeSent") Boolean verificationCodeSent, Model model) {
+        if (verificationCodeSent != null && verificationCodeSent) {
+            return "verificationCodeSent";
+        } else {
+            model.addAttribute("errorMessage", "Verification code not sent.");
+            return "error";
+        }
+    }
+
     @PostMapping("/verifyCode")
     public String verifyCode(@RequestParam("verificationCode") String verificationCode, HttpSession session) {
         String savedVerificationCode = (String) session.getAttribute("verificationCode");
