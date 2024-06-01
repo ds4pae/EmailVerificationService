@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>인증 코드 전송 완료</title>
+</head>
+<body>
+<h1>인증 코드를 이메일로 전송했습니다.</h1>
+<p>입력하신 이메일 주소로 인증 코드를 전송했습니다. 이메일을 확인해주세요.</p>
+<form action="/verifyCode" method="post">
+    <label for="verificationCode">인증 코드:</label>
+    <input type="text" id="verificationCode" name="verificationCode" required>
+    <button type="submit">인증</button>
+</form>
+</body>
+</html>

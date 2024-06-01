@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이메일 인증</title>
+</head>
+<body>
+<h1>이메일 인증</h1>
+<form action="/sendCode" method="post" th:object="${email}">
+    <label for="email">이메일 주소:</label>
+    <input type="email" id="email" name="email" th:field="*{email}" required>
+    <button type="submit">인증 코드 전송</button>
+</form>
+</body>
+</html>
